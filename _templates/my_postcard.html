@@ -1,0 +1,23 @@
+{% if pagename in ablog %}
+  {% set fa = ablog.fontawesome %}
+  {% set post = ablog[pagename] %}
+    {% if post.published %}
+      <div style="fint-size: 14pt;padding-left: 10pt;display:inline;">
+        {{ post.date.strftime(gettext(ablog.post_date_format)) }}
+      </div>
+    {% endif %}
+    {% if post.tags %}
+      <div style="fint-size: 14pt;padding-left: 10pt;display:inline;">
+      {% if post.tags|length > 1 %}
+        {% if fa %}
+          <i class="fa-fw fa fa-tags"></i>
+        {% else %}{{ gettext('Tags') }}:{% endif %}
+        {% else %}{% if fa %}<i class="fa-fw fa fa-tag"></i>{% else %}{{ gettext('Tag') }}:{% endif %}{% endif %}
+      {% for coll in post.tags %}
+        {% if coll|length %}
+        <a href="{{ pathto(coll.docname) }}">{{ coll }}</a>{% if loop.index < post.tags|length %},{% endif %}
+        {% else %}{{ coll }}{% if loop.index < post.tags|length %},{% endif %}{% endif %}
+      {% endfor %}
+      </div>
+    {% endif %}
+{% endif %}

@@ -1,0 +1,4 @@
+.. postlist:: 100500
+   :excerpts:
+   :date: %d-%m-%Y
+   :format: {date} | {title}

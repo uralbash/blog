@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+
+{% block breadcrumbs %}
+  <div class="head">
+    <a href="/">
+      <div style="background-image: url('/_static/bg.jpg');
+                  background-size: 100%;
+                  background-repeat: no-repeat;
+                  width:100%;
+                  height: 200px">
+        <h1 style="padding-top:15px;padding-left:15px;font-size:40px">Ural penguins</h1>
+      </div>
+    </a>
+  </div>
+{% endblock %}
+
+{% block extrahead %}
+  <style type="text/css">
+    html, body {
+      background: #545d5c !important;
+    }
+    .page__right {
+      background-color: #e7e7e7;
+    }
+    .rst-content {
+      padding: 13px;
+    }
+    .footer {
+      padding: 13px;
+    }
+    /* unvisited link */
+    ul.post-list-style-none a:link, .head a:link {
+        color: #222;
+        text-decoration: none;
+    }
+
+    /* visited link */
+    ul.post-list-style-none a:visited, .head a:visited {
+        color: #222;
+        text-decoration: none;
+    }
+
+    /* mouse over link */
+    ul.post-list-style-none a:hover, .head a:hover {
+        color: #222;
+        text-decoration: none;
+    }
+
+    ul.post-list-style-none a:active, .head a:active {
+        color: #222;
+        text-decoration: none;
+    }
+    ul.post-list-style-none li p.first {
+      color: red !important;
+      font: 1.8em "Open Sans",Arial,sans-serif !important;
+    }
+    .first a {
+      font-weight: bold;
+    }
+    .first em {
+      font-style: normal !important;
+    }
+    .wrapper__inner {
+      padding: 0px 30px 0 0 !important;
+    }
+    .strike {
+      text-decoration: line-through;
+    }
+  </style>
+{% endblock %}
+
+{% block footer %}
+  {{ super() }}
+  <div class="footer__theme">
+      <a href="https://github.com/abakan/ablog" class="footer__theme-link">
+        Ablog powered.
+      </a>
+  </div>
+  <div class="footer__theme">
+      <a href="http://uralbash.ru/blog/atom.xml" class="footer__theme-link">
+        RSS/Atom
+      </a>
+  </div>
+  <div class="footer__theme">
+      <a href="https://uralbash.blogspot.com" class="footer__theme-link">
+        Старый блог
+      </a>
+  </div>
+{% endblock %}
